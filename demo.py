@@ -46,7 +46,7 @@ s(text='name')
 s(nameContains='')
 s(label='Address')
 s(labelContains='Addr')
-s(name='value',index=1)  返回一组数据,可以用下标取值
+# s(name='value',index=1)  返回一组数据,可以用下标取值
 s(className='Button',name='value',visible=True,labelContains='Addr')
 s(text='value').find_elements()
 s().tap()
@@ -63,12 +63,36 @@ s(text='农夫山泉').click()
 time.sleep(2)
 s(name='取消').click()
 time.sleep(2)
-lists=['首页','关注','消息','我的']
+lists=['首页','关注','消息','我的','首页','消息','关注','首页','消息']
 for i in lists:
     s(label=i).click()
     time.sleep(1)
-s(label='首页').click()
+# s(label='首页').click()
+# time.sleep(2)
+
+
+win_size = s.screenshot()   # 返回整屏的大小
+
+# 开始执行'我的'下点击操作
+s(label='我的').click()
+print('点击我的')
 time.sleep(2)
+
+print('点击设置')
+s(label='nav settings').click()
+time.sleep(2)
+
+print('点击返回')
+s(label='nav back').click()
+time.sleep(2)
+
+
+
+
+
+
+
+
 
 
 # 首页推荐tap无法获取.采用坐标点击事件
