@@ -1,0 +1,2 @@
+在脚本编写中inspector查找元素时,属性名称都是精简后的名称
+如:"Class:Button"  这个Button完整的名称应该是XCUIElementTypeButton 只用这个才能在界面的元素中找到你需要的Class:Button

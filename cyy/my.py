@@ -118,6 +118,9 @@ def my(c,s):
     time.sleep(1)
     s(label='农夫山泉').click()
     time.sleep(2)
+    # 获取昵称的位置,然后更改   先清除文本内容,在set.text    更改用户名字
+
+
     # s(name='avatar-edit-mask').click()  # 点击照片更换
     # time.sleep(2)
     # s(label='取消').click()   # 取消返回
@@ -126,20 +129,18 @@ def my(c,s):
     time.sleep(2)
     # 暂时不能点击头像,,,后期看能不能改
 
-    # 点击身份认证
-    s(label='点击认证身份').click()
-    time.sleep(2)
-    s(label='返回').click()
-    time.sleep(1)
-
-
-
+    # 点击身份认证     页面中没有找到身份认证的话    程序会报错
+    # s(label='点击认证身份').click()
+    # time.sleep(2)
+    # s(label='返回').click()
+    # time.sleep(1)
 
 
 
 
 
     # 点击关注      页面还有别的关注,需要区分,需要做修改
+    '''
     s(label='关注').click()
     time.sleep(2)
     s(label='返回').click()
@@ -168,6 +169,11 @@ def my(c,s):
     time.sleep(2)
     s(label='返回').click()
     time.sleep(2)
+    '''
+
+
+
+
 
     # 点击粉丝
     s(label='粉丝').click()
@@ -176,11 +182,11 @@ def my(c,s):
     time.sleep(2)
     s(label='粉丝').click()
     time.sleep(2)
-    s(label='oO慢节奏Oo').click()
+    s(label='农夫').click()
     time.sleep(2)
     s(label='nav ico back').click()
     time.sleep(2)
-    s(label='oO慢节奏Oo').click()
+    s(label='农夫').click()
     time.sleep(2)
     s(label='nav share').click()
     time.sleep(2)
@@ -224,6 +230,9 @@ def my(c,s):
 
 if __name__ == '__main__':
     my(c,s)
+
+    from cyydemo.webagent.cyy import indexs
+    indexs(c,s)
 
 
 
