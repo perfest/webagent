@@ -135,17 +135,12 @@ def my(c,s):
     # s(label='返回').click()
     # time.sleep(1)
 
-
-
-
-
-    # 点击关注      页面还有别的关注,需要区分,需要做修改
-    '''
-    s(label='关注').click()
+    # 点击关注      页面还有别的关注,需要区分,需要做修改      这里使用 label 加 value 两个属性来确定这个 元素
+    s(label='关注', value='关注').click()
     time.sleep(2)
     s(label='返回').click()
     time.sleep(1)
-    s(label='关注').click()
+    s(label='关注', value='关注').click()
     time.sleep(2)
     s(label='七喜').click()
     time.sleep(2)
@@ -169,11 +164,6 @@ def my(c,s):
     time.sleep(2)
     s(label='返回').click()
     time.sleep(2)
-    '''
-
-
-
-
 
     # 点击粉丝
     s(label='粉丝').click()
@@ -231,8 +221,9 @@ def my(c,s):
 if __name__ == '__main__':
     my(c,s)
 
-    from cyydemo.webagent.cyy import indexs
-    indexs(c,s)
+    from cyydemo.webagent.cyy.index import indexs
+
+    indexs(c, s)
 
 
 
