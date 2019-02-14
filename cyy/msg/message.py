@@ -7,6 +7,7 @@ def information(c,s):
     time.sleep(3)
     print('开始执行消息页测试用例')
     # 点击赞,获取赞与被赞列表
+    print('赞列表的点击操作')
     s(label='赞').click()
     time.sleep(3)
     s(label='农夫山泉').click()
@@ -33,6 +34,8 @@ def information(c,s):
     time.sleep(3)
 
     # 点击复制链接    完事以后页面停留在 用户页面
+    s(label='nav share').click()
+    time.sleep(2)
     s(name='share_link').click()
     time.sleep(3)
 
@@ -43,46 +46,55 @@ def information(c,s):
     time.sleep(3)
     s(label='nav back').click()
     time.sleep(1)
+    s(label='互关注').click()
+    time.sleep(3)
+    s(label='取消').click()
+    time.sleep(2)
+    s(label='互关注').click()
+    time.sleep(2)
+    s(label='确定').click()
+    time.sleep(2)
+    s(label='nav back').click()
+    time.sleep(2)
+
+    # 点击粉丝
+    s(label='粉丝').click()
+    time.sleep(3)
+    s(label='返回').click()
+    time.sleep(2)
+
+    # 点击获赞
+    s(label='获赞').click()
+    time.sleep(2)
+    s(label='确认').click()
+    time.sleep(3)
+
+    # 点击赞过 下,上拉刷新     页面暂时不能定位到这两个元素
+    # 点击作品  下,上拉刷新
+    s.swipe(100, 700, 100, 300)
+    s.swipe(100, 700, 100, 300)
+    s.swipe(100, 300, 100, 700)
+    s.swipe(100, 300, 100, 700)
+    s.swipe(100, 300, 100, 700)
+
+    s.tap(305,355)    # 获取不到页面上的  赞过元素  使用坐标点击
+    s.swipe(100, 700, 100, 300)
+    s.swipe(100, 700, 100, 300)
+    s.swipe(100, 300, 100, 700)
+    s.swipe(100, 300, 100, 700)
+    s.swipe(100, 300, 100, 700)
+
+
+
 
     s(label='nav back').click()
     time.sleep(1)
+    s(label='nav back').click()
+    time.sleep(1)
+    s(label='消息').click()
+    time.sleep(1)
 
-
-
-
-
-
-
-
-
-
-    pass
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    print('执行完毕')
 
 
 
