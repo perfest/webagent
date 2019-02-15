@@ -22,7 +22,7 @@ def information(c,s):
     time.sleep(2)
     s(label='nav share').click()
     time.sleep(3)
-    s(name='mine_share_qrcode',text='二维码').click()
+    s(name='mine_share_qrcode', text='二维码').click()
     time.sleep(2)
     s(label='btn close pop').click()   # 不保存二维码
     time.sleep(2)
@@ -32,11 +32,13 @@ def information(c,s):
     time.sleep(3)
     s(label='保存到本地').click()        # 保存二维码    在这个地方的时候有时候点击保存二维码以后   可能页面可能还存在
     time.sleep(3)
+    s(label='btn close pop').click()  # 不保存二维码
+    time.sleep(2)
 
     # 点击复制链接    完事以后页面停留在 用户页面
     s(label='nav share').click()
     time.sleep(2)
-    s(name='share_link').click()
+    s(name='share_link', text='复制链接').click()
     time.sleep(3)
 
     # 点击个人用户主页的关注和粉丝,赞
@@ -44,7 +46,7 @@ def information(c,s):
     time.sleep(3)
     s(label='农夫').click()
     time.sleep(3)
-    s(label='nav back').click()
+    s(label='nav back', name='nav back').click()
     time.sleep(1)
     s(label='互关注').click()
     time.sleep(3)
@@ -52,9 +54,9 @@ def information(c,s):
     time.sleep(2)
     s(label='互关注').click()
     time.sleep(2)
-    s(label='确定').click()
+    s(label='确定', name='确定').click()
     time.sleep(2)
-    s(label='nav back').click()
+    s(label='返回').click()
     time.sleep(2)
 
     # 点击粉丝
@@ -95,6 +97,11 @@ def information(c,s):
     time.sleep(1)
 
     print('执行完毕')
+
+
+    # 点击粉丝事件
+    from cyydemo.webagent.cyy.public import publics
+    publics.fs(s)
 
 
 

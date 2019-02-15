@@ -63,7 +63,7 @@ s(text='农夫山泉').click()
 time.sleep(2)
 s(name='取消').click()
 time.sleep(2)
-lists=['首页','关注','消息','我的','首页','消息','关注','首页','消息']
+lists = ['首页', '关注', '消息', '我的', '首页', '消息', '关注', '首页', '消息']
 for i in lists:
     s(label=i).click()
     time.sleep(1)
@@ -71,31 +71,20 @@ for i in lists:
 # time.sleep(2)
 
 
-win_size = s.screenshot()   # 返回整屏的大小
-
-# 开始执行'我的'下点击操作
-s(label='我的').click()
-print('点击我的')
-time.sleep(2)
-
-print('点击设置')
-s(label='nav settings').click()
-time.sleep(2)
-
-print('点击返回')
-s(label='nav back').click()
-time.sleep(2)
+# 埋点测试
+'''
+获取当前ugc信息,滑动,获取当前时间,停留sleep10秒,
+'''
 
 
 
+# //*[@id="selectedElementContainer"]/div/div[2]/div/div[3]/div/div/div/div/div/table/tbody/tr/td[2]/text()
+
+
+s(xpath='//*[@id="selectedElementContainer"]/div/div[2]/div/div[3]/div/div/div/div/div/table/tbody/tr/td[2]').get().text
 
 
 
-
-
-
-
-# 首页推荐tap无法获取.采用坐标点击事件
 
 
 
