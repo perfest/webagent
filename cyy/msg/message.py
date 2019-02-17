@@ -54,8 +54,9 @@ def information(c,s):
     time.sleep(2)
     s(label='互关注').click()
     time.sleep(2)
-    s(label='确定', name='确定').click()
+    s(label='确定', name='确定').click()       # 1.1.0版本中这里有问题
     time.sleep(2)
+
     s(label='返回').click()
     time.sleep(2)
 
@@ -87,10 +88,6 @@ def information(c,s):
     s.swipe(100, 300, 100, 700)
 
 
-
-
-    s(label='nav back').click()
-    time.sleep(1)
     s(label='nav back').click()
     time.sleep(1)
     s(label='消息').click()
@@ -104,5 +101,42 @@ def information(c,s):
     publics.fs(s)
 
 
+    # 点击评论事件
+    s(label='评论').click()
+    time.sleep(1)
+    s(label='农夫').click()
+    time.sleep(1)
+    s(className='TextView').set_text('你很帅气')
+    time.sleep(2)
+    s(label='发送').click()
+    time.sleep(2)
+    s(className='Button').find_elements()[2].click()    # 对第一个实现点赞
+    time.sleep(1)
+    s(label='评论').click()
+    time.sleep(2)
+    s(className='Image').find_elements()[0].click()     # 点击 第一个图片 实现跳转到用户主页
+    time.sleep(2)
+    # 跳转用户主页以后 在次点击一遍之前的用户主页的操作
+
+    s(className='Image').find_elements()[1].click()    # 实现点击获取评论的内容
+    time.sleep(2)
+    s(label='评论').click()
+    time.sleep(2)
+    s(label='消息').click()
+    time.sleep(2)
+    s(className='Cell').find_elements()[4].click()          # 点击宠优优小助手
+    time.sleep(2)
+    s(className='Cell').find_elements()[0].click()          # 点击第一条信息
+    time.sleep(10)
+    s(label='宠优优小助手').click()                                  # 这步是返回上一步
+    time.sleep(2)
+    s(label='消息').click()                                       # 返回
+    time.sleep(2)
+    s(calssName='Cell').find_elements()[5].click()
+    time.sleep(2)
+    s(label='消息').click()            # 直接返回
+    time.sleep(2)
+
+    print('消息页点击事件执行完成')
 
 

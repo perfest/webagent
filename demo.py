@@ -81,8 +81,6 @@ for i in lists:
 # //*[@id="selectedElementContainer"]/div/div[2]/div/div[3]/div/div/div/div/div/table/tbody/tr/td[2]/text()
 
 
-s(xpath='//*[@id="selectedElementContainer"]/div/div[2]/div/div[3]/div/div/div/div/div/table/tbody/tr/td[2]').get().text
-
 
 
 

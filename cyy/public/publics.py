@@ -3,7 +3,7 @@ import time
 def fs(s):
     s(label='粉丝').click()
     time.sleep(2)
-    s(label='返回').click()
+    s(className='Button').find_elements()[0].click()
     time.sleep(2)
     s(label='粉丝').click()
     time.sleep(2)

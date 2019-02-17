@@ -2,7 +2,7 @@
 如:"Class:Button"  这个Button完整的名称应该是XCUIElementTypeButton 只用这个才能在界面的元素中找到你需要的Class:Button
 
 保存截图    这里只能保存png格式的图片
-wda.screenshot('name.png')
+c.screenshot('name.png')       保存图片的位置为当前项目 根目录下
 
 有的页面中对个某些元素中的label 是相同的    可以使用label 加 value 两个属性或是多个属性来确定页面中的元素
 
@@ -12,6 +12,11 @@ wda.screenshot('name.png')
 在滑动事件中  s.swipe(坐标位置)   在左右滑动中可以直接使用   s.swipe_right()     s.swipe_left()
 
 在使用  s.swipe_up() 可以切换到后台      s.swipe_down()  可以下拉查看 通知栏消息
+使用 c.status()   获取当前设备信息
 
+在输入框中.set_text('发送的内容')  可以在输入框中显示
+
+使用 s(className='Button').find_elements()[0].click()  返回一组元素 calssName为Button的元素,通过index可以实现特定的点击事件
+使用 s(className='Button').find_elements()[1].text    返回当前元素的text
 
 
