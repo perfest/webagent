@@ -97,14 +97,14 @@ def information(c,s):
 
 
     # 点击粉丝事件
-    from cyydemo.webagent.cyy.public import publics
-    publics.fs(s)
+    # from cyydemo.webagent.cyy.public import publics      有问题这里不能跑 上面没有问题
+    # publics.fs(s)
 
 
     # 点击评论事件
     s(label='评论').click()
     time.sleep(1)
-    s(label='农夫').click()
+    s(label='农夫山泉').click()
     time.sleep(1)
     s(className='TextView').set_text('你很帅气')
     time.sleep(2)
@@ -118,9 +118,9 @@ def information(c,s):
     time.sleep(2)
     # 跳转用户主页以后 在次点击一遍之前的用户主页的操作
 
-    s(className='Image').find_elements()[1].click()    # 实现点击获取评论的内容
-    time.sleep(2)
-    s(label='评论').click()
+    # s(className='Image').find_elements()[1].click()    # 实现点击获取评论的内容
+    # time.sleep(2)
+    s(label='nav back').click()
     time.sleep(2)
     s(label='消息').click()
     time.sleep(2)
@@ -132,7 +132,7 @@ def information(c,s):
     time.sleep(2)
     s(label='消息').click()                                       # 返回
     time.sleep(2)
-    s(calssName='Cell').find_elements()[5].click()
+    s(className='Cell').find_elements()[5].click()
     time.sleep(2)
     s(label='消息').click()            # 直接返回
     time.sleep(2)

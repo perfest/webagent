@@ -142,23 +142,23 @@ def my(c,s):
     time.sleep(1)
     s(label='关注', value='关注').click()
     time.sleep(2)
-    s(label='七喜').click()
+    s(label='新一').click()
     time.sleep(2)
-    s(label='nav ico back').click()
+    s(label='nav back').click()
     time.sleep(2)
-    s(label='七喜').click()
+    s(label='新一').click()
     time.sleep(2)
     s(label='nav share').click()
     time.sleep(2)
     s(label='nav cross').click()
     time.sleep(1)
-    s(label='nav ico back').click()
+    s(label='nav back').click()
     time.sleep(2)
-    s(label='已关注').click()
+    s(label='互关注').click()
     time.sleep(2)
     s(label='取消').click()
     time.sleep(1)
-    s(label='已关注').click()
+    s(label='互关注').click()
     time.sleep(2)
     s(label='确定').click()
     time.sleep(2)
@@ -166,8 +166,8 @@ def my(c,s):
     time.sleep(2)
 
     # 点击粉丝
-    from cyydemo.webagent.cyy.public import publics
-    publics.fs(s)
+    # from cyydemo.webagent.cyy.public import publics
+    # publics.fs(s)
 
     # 点击获赞
     s(label='获赞').click()
@@ -185,19 +185,17 @@ def my(c,s):
     # time.sleep(2)
 
 
-
-
-    s.close()
-
-
 if __name__ == '__main__':
+
     my(c,s)
 
     from cyydemo.webagent.cyy.index import indexs
 
-    indexs(c, s)
+    indexs.indexs(c,s)
 
+    from cyydemo.webagent.cyy.msg import message
 
+    message.information(c,s)
 
 
 
