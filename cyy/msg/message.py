@@ -93,7 +93,7 @@ def information(c,s):
     s(label='消息').click()
     time.sleep(1)
 
-    print('执行完毕')
+    print('消息页赞列表执行完毕')
 
 
     # 点击粉丝事件

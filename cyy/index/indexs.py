@@ -13,7 +13,7 @@ def indexs(c,s):
 
     s.swipe_right()
     s.swipe_left()                      # 可以实现左右滑动事件
-
+    time.sleep(3)
     print('首页滑动事件完成')
     s(className='Cell').find_elements()[3].tap()
     time.sleep(3)
@@ -27,11 +27,12 @@ def indexs(c,s):
     s(label='首页').click()        # 点击返回
     time.sleep(3)
     # s(className='StaticText').find_elements()[5].tap()      # 首页中无法实现点击用户昵称实现跳转
-    s(label='bg btn tuf nor', className='Button').find_elements()[3].click()      # 实现小心心的点击
+    s(label='bg btn tuf nor', className='Button').find_elements()[3].tap()     # 实现小心心的点击
     time.sleep(2)
-    l = range(4)
+    l = range(2)
+    follow = s(label='bg btn tuf nor', className='Button').find_elements()
     for i in l:
-        s(label='bg btn tuf nor', className='Button').find_elements()[i].click()
+        follow[i].click()
         print('第{}个小心心的点击事件'.format(i))
         time.sleep(1)
 
@@ -46,13 +47,36 @@ def indexs(c,s):
     s.swipe_left()
     time.sleep(2)       # 5次左滑事件完成以后  现在停留在'生活'tab下
 
-    for i in l:
-        s(label='bg btn tuf nor', className='Button').find_elements()[i].click()
+    ls = s(label='bg btn tuf nor', className='Button').find_elements()
+    m = range(2)
+    for i in m:
+        ls[i].click()
         print('第{}个小心心的点击事件'.format(i))
         time.sleep(1)           # 在当前页面实现点赞
 
     s(className='StaticText').find_elements()[3].tap()        # 点击进入ugc详情页
     time.sleep(3)
+    s.swipe(100, 700, 100, 300)
+    time.sleep(5)
+    s.swipe(100, 700, 100, 300)
+    time.sleep(5)
+    s.swipe(100, 700, 100, 300)
+    time.sleep(5)
+    s.swipe(100, 700, 100, 300)
+    time.sleep(5)
+    s.swipe(100, 700, 100, 300)
+    time.sleep(5)
+    s.swipe(100, 700, 100, 300)
+    time.sleep(5)
+    s.swipe(100, 700, 100, 300)
+    time.sleep(5)
+
+    print('进入ugc详情页以后在写,执行结束')
+    s(className='Button', label='首页').tap()
+    time.sleep(2)
+
+
+
 
     '''
     第--1--个Button的text是=======喜欢
@@ -66,31 +90,28 @@ def indexs(c,s):
     第--9--个Button的text是=======bg btn play
     第--10--个Button的text是=======amplification
     注意:1,2 如果有点赞或评论数量 则text显示为 数字  
+    1,3,4,------5,6
     '''
-    l = range(1, 10)
+    '''
+    ls = s(className='Button').find_elements()         # 有问题
+    lc = len(ls)
+    print(lc)
+    l = range(1, lc+1)
+    print(l)
     for i in l:
         m = s(className='Button').find_elements()[i].text
         print('第--{}--个Button的text是======={}'.format(i, m))
-        if i == 1:
+        if i == 1 or 3 or 4:  # 需要跳转界面
+            # s(className='Button').find_elements()[0].tap()
             pass
-        else:
+        elif i == 5 or 6:   # 页面有弹框
             s(className='Button').find_elements()[0].tap()
+        elif i >= 7:   # 页面无提示(弹框消失)
+            pass
+
+    '''
 
 
 
-
-
-
-
-'''
-ls = 所存的为当前页面ClassName为Image 的元素
-for i in ls:
-    i.tap()    实现这个页面所有元素的点击  但是点击以后需要返回
-    time.sleep(1)
-    if s(className=format{})format Button or '推荐' or nav back :
-    if s(className=format{}).exists : format Button or '推荐' or nav back 
-    如果页面上存在这个元素 点击返回
-    进行下一次的元素点击
-'''
 
 
