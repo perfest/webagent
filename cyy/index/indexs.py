@@ -6,6 +6,7 @@ def indexs(c,s):
     s(label='首页').click()
     time.sleep(3)
     print("执行首页的测试用例")
+    '''
     s.swipe(100, 700, 100, 300)         # 向上滑动事件
     s.swipe(100, 300, 100, 700)         # 向下滑动事件
     s.swipe(100, 300, 400, 300)         # 向右滑动事件
@@ -15,6 +16,7 @@ def indexs(c,s):
     s.swipe_left()                      # 可以实现左右滑动事件
     time.sleep(3)
     print('首页滑动事件完成')
+    '''
     s(className='Cell').find_elements()[3].tap()
     time.sleep(3)
     s(label='首页').click()

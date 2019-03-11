@@ -10,11 +10,11 @@ def information(c,s):
     print('赞列表的点击操作')
     s(label='赞').click()
     time.sleep(3)
-    s(label='农夫山泉').click()
+    s(label='农夫').click()
     time.sleep(3)
     s(label='nav back').click()
     time.sleep(1)
-    s(label='农夫山泉').click()
+    s(label='农夫').click()
     time.sleep(3)
     s(label='nav share').click()
     time.sleep(2)
@@ -44,11 +44,11 @@ def information(c,s):
     # 点击个人用户主页的关注和粉丝,赞
     s(label='关注').click()
     time.sleep(3)
-    s(label='农夫').click()
+    s(label='王老吉').click()
     time.sleep(3)
     s(label='nav back', name='nav back').click()
     time.sleep(1)
-    s(label='互关注').click()
+    s(label='王老吉').click()
     time.sleep(3)
     s(label='取消').click()
     time.sleep(2)
@@ -74,6 +74,7 @@ def information(c,s):
 
     # 点击赞过 下,上拉刷新     页面暂时不能定位到这两个元素
     # 点击作品  下,上拉刷新
+    '''
     s.swipe(100, 700, 100, 300)
     s.swipe(100, 700, 100, 300)
     s.swipe(100, 300, 100, 700)
@@ -86,7 +87,7 @@ def information(c,s):
     s.swipe(100, 300, 100, 700)
     s.swipe(100, 300, 100, 700)
     s.swipe(100, 300, 100, 700)
-
+    '''
 
     s(label='nav back').click()
     time.sleep(1)
@@ -94,34 +95,31 @@ def information(c,s):
     time.sleep(1)
 
     print('消息页赞列表执行完毕')
-
-
     # 点击粉丝事件
     # from cyydemo.webagent.cyy.public import publics      有问题这里不能跑 上面没有问题
     # publics.fs(s)
-
 
     # 点击评论事件
     s(label='评论').click()
     time.sleep(1)
     s(label='农夫山泉').click()
     time.sleep(1)
-    s(className='TextView').set_text('你很帅气')
+    s(xpath='//XCUIElementTypeStaticText[@name="说点什么吧..."][1]').set_text('你很帅气')
     time.sleep(2)
     s(label='发送').click()
     time.sleep(2)
-    s(className='Button').find_elements()[2].click()    # 对第一个实现点赞
+    s(className='Button').find_elements()[3].click()    # 对第一个实现点赞
     time.sleep(1)
-    s(label='评论').click()
-    time.sleep(2)
-    s(className='Image').find_elements()[0].click()     # 点击 第一个图片 实现跳转到用户主页
-    time.sleep(2)
+    # ime.sleep(2)
+    # s(xpath='//XCUIElementTypeStaticText[@name="萌宠集中营"]').click()
+    # s(className='Image').find_elements()[0].click()     # 点击 第一个图片 实现跳转到用户主页
+    # time.sleep(2)
     # 跳转用户主页以后 在次点击一遍之前的用户主页的操作
 
     # s(className='Image').find_elements()[1].click()    # 实现点击获取评论的内容
     # time.sleep(2)
-    s(label='nav back').click()
-    time.sleep(2)
+    # s(label='nav back').click()
+    # time.sleep(2)
     s(label='消息').click()
     time.sleep(2)
     s(className='Cell').find_elements()[4].click()          # 点击宠优优小助手
