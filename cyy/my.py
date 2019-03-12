@@ -8,7 +8,7 @@ import wda
 '''
 
 # c = wda.Client('http://localhost:8100')
-c = wda.Client('http://192.168.0.129:8100')
+c = wda.Client('http://192.168.0.130:8100')
 print('链接成功')
 print(c.status())
 # print(c.wait_ready())
