@@ -122,7 +122,7 @@ def information(c,s):
         print('他人页面点击关注,跳转成功,当前状态 --%s' % msg12)
     else:
         print('他人页面点击关注,跳转失败,当前状态 --%s' % msg12)
-    time.sleep(2)                                                   #  有问题
+    time.sleep(1)                                                   #  有问题
 
     s(label='已关注').click()
     time.sleep(2)
@@ -142,10 +142,10 @@ def information(c,s):
         print('点击取消弹框消失成功,当前状态 --%s' % msg14)
     time.sleep(2)
 
-    s(label='已关注').click()
-    time.sleep(2)
-    s(label='确认', name='确认').click()
-    time.sleep(2)
+    # s(label='互关注').click()
+    # time.sleep(2)
+    # s(className='Button', label='确定').click()
+    # time.sleep(2)
     s(label='农夫山').click()
     time.sleep(2)
     msg15 = s(label='+ 关注').exists
@@ -196,15 +196,13 @@ def information(c,s):
 
     s(label='已关注').click()
     time.sleep(2)
-    msg20 = s(label='确定').exists
+    msg20 = s(label='确定').click_exists(5)
     if msg20:
         print('msg20成功,当前状态 --%s' % msg20)
     else:
         print('msg20失败,当前状态 --%s' % msg20)
     time.sleep(2)
 
-    s(label='确定')
-    time.sleep(2)
     s(className='Cell').find_elements()[0].click()
     time.sleep(2)
     msg21 = s(label='+ 关注').exists
@@ -239,9 +237,9 @@ def information(c,s):
     time.sleep(3)
     msg24 = s(label='确认').exists
     if msg24:
-        print('msg24成功,当前状态 --%s' % msg24)
+        print('msg24执行失败,当前状态 --%s' % msg24)
     else:
-        print('msg24失败,当前状态 --%s' % msg24)
+        print('msg24执行成功,当前状态 --%s' % msg24)
     time.sleep(2)
 
     s(className='ScrollView').click()   # 切换到赞过双瀑布列表下
@@ -257,6 +255,28 @@ def information(c,s):
     else:
         print('msg25失败,当前状态 --%s' % msg25)
     time.sleep(2)
+
+    print('赞列表25条用例执行完毕,准备执行粉丝列表')
+    s(label='粉丝').click()
+    msg35 = s(label='关注').exists
+    if msg35:
+        print('msg35成功,当前状态 --%s' % msg35)
+    else:
+        print('msg35失败,当前状态 --%s' % msg35)
+    time.sleep(2)
+
+    s(label='关注').click()
+    s(className='Cell').find_elements()[0].click()
+    msg36 = s(label='已关注').exists
+    if msg36:
+        print('msg36成功,当前状态 --%s' % msg36)
+    else:
+        print('msg36失败,当前状态 --%s' % msg36)
+    time.sleep(2)
+
+    s(label='nav back').click()
+    time.sleep(1)
+    s(label='消息').click()
 
     # 点击评论事件
     s(label='评论').click()
@@ -327,12 +347,17 @@ def information(c,s):
     time.sleep(2)
 
     s(label='nav back').click()
-    msg34 = s(label='分享').exists
+    msg34 = s(label='发送').exists
     if msg34:
         print('msg34执行成功,当前状态 --%s' % msg34)
     else:
         print('msg34执行失败,当前状态 --%s' % msg34)
     time.sleep(2)
+
+    '''
+    截止这里,页面停留在点击评论以后的详情页.
+    单ugc详情页.评论默认展开的样式
+    '''
 
     print('34条用例执行完毕')
 
