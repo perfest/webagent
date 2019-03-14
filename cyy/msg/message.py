@@ -155,6 +155,14 @@ def information(c,s):
         print('点击确认取消关注失败,当前状态 --%s' % msg15)
     time.sleep(2)
 
+    fl = s(label='已关注').exists
+    if fl:
+        s(label='已关注').click()
+        time.sleep(2)
+        s(label='确定').click()
+        time.sleep(2)
+    else:
+        pass
     s(label='+ 关注').click()
     time.sleep(2)
     msg16 = s(label='已关注').exists
@@ -307,6 +315,7 @@ def information(c,s):
     time.sleep(2)
 
     s(label='发送').click()
+    time.sleep(1)
     msg29 = s(label='评论成功').exists
     if msg29:
         print('msg29执行成功,当前状态 --%s' % msg29)
@@ -358,13 +367,21 @@ def information(c,s):
     截止这里,页面停留在点击评论以后的详情页.
     单ugc详情页.评论默认展开的样式
     '''
-
-    print('34条用例执行完毕')
-
-    '''
-    s(label='评论').click()
     s(label='消息').click()
     time.sleep(2)
+    msg38 = s(className='StaticText', label='你很帅气').exists
+    # 这里需要注意的是这是在我自己的作品下.自己评论自己.所以返回以后这里会有显示.
+    # 如果第一个作品不是我自己的.这里就需要考虑,不能发现这个 评论了
+    if msg38:
+        print('msg38执行成功,当前状态 --%s' % msg38)
+    else:
+        print('msg38执行失败,当前状态 --%s' % msg38)
+    time.sleep(2)
+
+
+
+
+
     s(className='Cell').find_elements()[4].click()          # 点击宠优优小助手
     time.sleep(2)
     s(className='Cell').find_elements()[0].click()          # 点击第一条信息
@@ -379,5 +396,5 @@ def information(c,s):
     time.sleep(2)
 
     print('消息页点击事件执行完成')
-    '''
+
 
